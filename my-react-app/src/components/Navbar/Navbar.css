@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   padding: 1rem 2.5rem;
   background: rgba(10, 10, 20, 0.85);
   backdrop-filter: blur(12px);
@@ -39,6 +40,9 @@
   display: flex;
   list-style: none;
   gap: 2.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-links li a {
@@ -69,7 +73,22 @@
   width: 100%;
 }
 
-/* Hamburger */
+.nav-dealership {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.nav-dealership:hover {
+  color: #7c3aed;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
