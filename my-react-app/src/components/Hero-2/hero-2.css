@@ -1,0 +1,95 @@
+:root{
+	--muted:#bfc3c7;
+	--accent:#111;
+}
+
+.hero2{
+	background: #e6e7ea;
+	width:100%;
+	padding:60px 20px 120px;
+	position:relative;
+	overflow:hidden;
+}
+
+.hero2__content{
+	max-width:1200px;
+	margin:0 auto;
+	position:relative;
+}
+
+.hero2__stats{
+	display:flex;
+	justify-content:center;
+	align-items:flex-start;
+	gap:28px;
+	color:var(--muted);
+	font-family: 'Arial', sans-serif;
+	letter-spacing:0.6px;
+	margin-bottom:40px;
+}
+
+.stat{
+	text-align:center;
+	min-width:160px;
+}
+
+.stat__value{
+	color:var(--accent);
+	font-size:14px;
+	font-weight:700;
+	line-height:1.1;
+}
+
+.stat__value span{
+	display:block;
+	font-size:30px;
+	color:#202020;
+	margin-top:6px;
+}
+
+.stat__label{
+	font-size:12px;
+	color:var(--accent);
+	margin-top:6px;
+}
+
+.divider{
+	width:1px;
+	background:rgba(0,0,0,0.15);
+	height:48px;
+	align-self:center;
+}
+
+.hero2__visual{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.hero2__car{
+	width:830px;
+	max-width:85%;
+	height:auto;
+	filter: drop-shadow(0 18px 30px rgba(0,0,0,0.25));
+}
+
+.hero2__corner-logos{
+	position:absolute;
+	right:-90px;
+	bottom:-90px;
+	display:flex;
+	gap:40px;
+	align-items:center;
+}
+
+.hero2__corner-logos .award{ width:125px; height:auto; }
+.hero2__corner-logos .ancap{ width:125px; height:auto; }
+
+@media (max-width:900px){
+	.hero2__stats{ flex-direction:column; gap:12px; align-items:center; }
+	.divider{ display:none; }
+	.hero2__car{ width:92%; }
+	.hero2{ padding-top:30px; }
+	.hero2__corner-logos{ right:12px; bottom:8px; }
+}
+
