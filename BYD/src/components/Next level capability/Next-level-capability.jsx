@@ -1,8 +1,8 @@
 import React from 'react'
 import './Next-level-capability.css'
-import feature1 from '../../assets/images/feature-01.webp'
-import feature2 from '../../assets/images/feature-02.webp'
-import feature3 from '../../assets/images/feature-03.webp'
+import feature1 from '../../assets/images/byd-car9.webp'
+import feature2 from '../../assets/images/byd-car11.webp'
+import feature3 from '../../assets/images/byd-car12.webp'
 
 const features = [
   {
