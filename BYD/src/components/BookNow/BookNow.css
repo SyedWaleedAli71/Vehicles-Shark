@@ -211,9 +211,59 @@
   line-height: 1.8;
 }
 
+@media (max-width: 520px) {
+  .booknow-inner {
+    gap: 20px;
+  }
+
+  .booknow-slider {
+    min-height: 390px;
+    border-radius: 22px;
+  }
+
+  .booknow-slide__meta {
+    left: 14px;
+    right: 14px;
+    bottom: 54px;
+    max-width: none;
+    padding: 14px;
+  }
+
+  .booknow-slide__meta p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .booknow-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+  }
+
+  .booknow-arrow--left {
+    left: 12px;
+  }
+
+  .booknow-arrow--right {
+    right: 12px;
+  }
+
+  .booknow-panel {
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+}
+
 @media (max-width: 1080px) {
   .booknow-inner {
     grid-template-columns: 1fr;
+  }
+
+  @media (hover: none) {
+    .booknow-arrow:hover,
+    .booknow-action:hover {
+      transform: none;
+    }
   }
 
   .booknow-panel {

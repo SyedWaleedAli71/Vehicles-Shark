@@ -37,7 +37,7 @@
 }
 
 .assembly-card:hover {
-  transform: translateY(-14px);
+  transform: translateY(-8px);
   border-color: rgba(245, 166, 35, 0.6);
   box-shadow: 0 32px 70px rgba(0, 0, 0, 0.35);
 }
@@ -58,7 +58,7 @@
 }
 
 .assembly-card:hover .assembly-card__media img {
-  transform: scale(1.08);
+  transform: scale(1.04);
 }
 
 .assembly-card__overlay {
@@ -101,6 +101,16 @@
 @media (max-width: 680px) {
   .advanced-technical-assembly {
     padding: 40px 16px 56px;
+  }
+
+  @media (hover: none) {
+    .assembly-card:hover {
+      transform: none;
+    }
+
+    .assembly-card:hover .assembly-card__media img {
+      transform: none;
+    }
   }
 
   .assembly__grid {

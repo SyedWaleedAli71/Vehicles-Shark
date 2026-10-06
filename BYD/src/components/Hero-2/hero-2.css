@@ -71,7 +71,10 @@
 	max-width:85%;
 	height:auto;
 	filter: drop-shadow(0 18px 30px rgba(0,0,0,0.25));
+	transition: transform 0.45s ease;
 }
+
+.hero2__visual:hover .hero2__car{ transform: scale(1.015); }
 
 .hero2__corner-logos{
 	position:absolute;
@@ -85,6 +88,10 @@
 .hero2__corner-logos .award{ width:125px; height:auto; }
 .hero2__corner-logos .ancap{ width:125px; height:auto; }
 
+@media (max-width:1400px){
+	.hero2__corner-logos{ right:0; bottom:0; gap:16px; }
+}
+
 @media (max-width:900px){
 	.hero2__stats{ flex-direction:column; gap:12px; align-items:center; }
 	.divider{ display:none; }
@@ -93,3 +100,14 @@
 	.hero2__corner-logos{ right:12px; bottom:8px; }
 }
 
+@media (max-width:600px){
+	.hero2{ padding:32px 16px 100px; }
+	.hero2__car{ max-width:100%; }
+	.hero2__corner-logos{ right:8px; bottom:0; gap:16px; }
+	.hero2__corner-logos .award,
+	.hero2__corner-logos .ancap{ width:82px; }
+}
+
+@media (hover: none){
+	.hero2__visual:hover .hero2__car{ transform:none; }
+}

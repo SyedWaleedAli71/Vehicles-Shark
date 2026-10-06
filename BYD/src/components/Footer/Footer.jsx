@@ -11,7 +11,7 @@ export default function Footer() {
             <p>Get exclusive updates on BYD</p>
           </div>
           <form className="footer__form">
-            <input className="footer__input" type="email" placeholder="Email" />
+            <input className="footer__input" type="email" placeholder="Email" aria-label="Email address" />
             <button className="footer__button" type="submit">Subscribe</button>
           </form>
         </div>

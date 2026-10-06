@@ -92,6 +92,8 @@ export default function CenterSlider() {
               type="button"
               className={`slider-dot ${index === activeIndex ? 'slider-dot--active' : ''}`}
               onClick={() => setActiveIndex(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === activeIndex ? 'true' : undefined}
             />
           ))}
         </div>

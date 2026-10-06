@@ -62,8 +62,8 @@ export default function BookNow() {
             </div>
           ))}
 
-          <button className="booknow-arrow booknow-arrow--left" onClick={goPrev} aria-label="Previous slide">�</button>
-          <button className="booknow-arrow booknow-arrow--right" onClick={goNext} aria-label="Next slide">�</button>
+          <button className="booknow-arrow booknow-arrow--left" onClick={goPrev} aria-label="Previous slide">‹</button>
+          <button className="booknow-arrow booknow-arrow--right" onClick={goNext} aria-label="Next slide">›</button>
 
           <div className="booknow-dots">
             {slides.map((_, index) => (
@@ -73,6 +73,7 @@ export default function BookNow() {
                 className={`booknow-dot ${index === currentSlide ? 'booknow-dot--active' : ''}`}
                 onClick={() => setCurrentSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
+                aria-current={index === currentSlide ? 'true' : undefined}
               />
             ))}
           </div>

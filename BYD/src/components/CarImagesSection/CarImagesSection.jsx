@@ -17,7 +17,7 @@ export default function CarImagesSection() {
         <div className="car-images-section__hero">
           <div className="car-images-section__hero-inner">
             <img className="hero-image" src={car1} alt={images[0].alt} />
-            <div className="hero-overlay">
+            <div className="car-images-section__overlay">
               <div className="hero-overlay__top">
                 <p className="label">Featured Pickup</p>
                 <h2>Pakistan’s Biggest pickup truck with PHEV technology</h2>

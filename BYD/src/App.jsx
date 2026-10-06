@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/HeroSection/hero'
@@ -12,17 +13,64 @@ import Footer from './components/Footer/Footer.jsx';
 
 
 function App() {
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return undefined
+
+    const revealGroups = [
+      {
+        selector: '.hero2__stats, .hero2__visual, .car-images-section__hero, .center-slider__head, .assembly__header, .footer__subscribe',
+        direction: 'reveal-up',
+      },
+      {
+        selector: '.car-image-card, .capability-card, .assembly-card, .footer__col, .footer__brand',
+        direction: 'reveal-fade',
+      },
+      {
+        selector: '.v2l-function__media, .booknow-slider',
+        direction: 'reveal-left',
+      },
+      {
+        selector: '.v2l-function__content, .booknow-panel',
+        direction: 'reveal-right',
+      },
+    ]
+    const items = revealGroups.flatMap(({ selector, direction }) =>
+      Array.from(document.querySelectorAll(selector), (element) => {
+        element.classList.add('reveal-item', direction)
+        return element
+      }),
+    )
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          observer.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' })
+
+    document.documentElement.classList.add('reveal-ready')
+    items.forEach((item) => observer.observe(item))
+
+    return () => {
+      observer.disconnect()
+      document.documentElement.classList.remove('reveal-ready')
+    }
+  }, [])
+
   return (
     <>
       <Navbar />
-      <Hero />
-      <Hero2 />
-      <CarImagesSection />
-      <CenterSlider />
-      <NextLeveLCapability />
-      <V2LFuntion />
-      <Advancedtechnicalassembly />
-      <BookNow />
+      <main className="site-content">
+        <Hero />
+        <Hero2 />
+        <CarImagesSection />
+        <CenterSlider />
+        <NextLeveLCapability />
+        <V2LFuntion />
+        <Advancedtechnicalassembly />
+        <BookNow />
+      </main>
       <Footer />
     </>
   )
